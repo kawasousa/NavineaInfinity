@@ -1,0 +1,16 @@
+res://scenes/level.tscn
+res://shader/level.gdshader
+res://shader/start_menu_bg.gdshader
+res://scenes/start_menu.tscn
+res://scenes/global.tscn
+res://scenes/game_over_menu.tscn
+res://scenes/ship.tscn
+res://scripts/ship.gd
+res://scripts/Global.gd
+res://scripts/game_over_menu.gd
+res://scripts/level.gd
+res://scripts/asteroid.gd
+res://scenes/asteroid.tscn
+res://scripts/explosion.gd
+res://themes/game_over.tres
+res://scripts/start_menu.gd

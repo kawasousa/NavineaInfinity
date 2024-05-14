@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://dv4ua640tlm6o"]
+
+[ext_resource type="Shader" path="res://shader/start_menu_bg.gdshader" id="1_fbuwd"]
+[ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_jp1qi"]
+[ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_rbyxm"]
+[ext_resource type="Texture2D" uid="uid://dtfiij6mhsi60" path="res://assets/game_over_screen.png" id="2_v5y55"]
+[ext_resource type="Theme" uid="uid://cmwgba5ocfaeu" path="res://themes/game_over.tres" id="3_cqc4q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13ggf"]
+shader = ExtResource("1_fbuwd")
+shader_parameter/vel = -0.25
+
+[sub_resource type="Animation" id="Animation_73t8q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../game_over_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -50)]
+}
+
+[sub_resource type="Animation" id="Animation_g0a6x"]
+resource_name = "floating"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../game_over_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -15), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtbv5"]
+_data = {
+"RESET": SubResource("Animation_73t8q"),
+"floating": SubResource("Animation_g0a6x")
+}
+
+[node name="game_over_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rbyxm")
+
+[node name="background" type="TextureRect" parent="."]
+visible = false
+texture_repeat = 2
+material = SubResource("ShaderMaterial_13ggf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jp1qi")
+
+[node name="game_over_rect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.13385
+offset_bottom = -6.13385
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v5y55")
+
+[node name="floating_animation" type="AnimationPlayer" parent="game_over_rect"]
+reset_on_save = false
+root_node = NodePath("../../background")
+libraries = {
+"": SubResource("AnimationLibrary_gtbv5")
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="restart" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cqc4q")
+text = "tentar novamente"
+
+[node name="quit_to_menu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_cqc4q")
+text = "menu inicial"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/restart" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/quit_to_menu" to="." method="_on_quit_to_menu_pressed"]
