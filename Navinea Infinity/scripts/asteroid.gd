@@ -45,4 +45,4 @@ func choose_random_asteroid():
 	# Define a veloicidade do asteroide baseada em qual asteroid foi criado
 	speed = Global.level_node.speed_factor * -100 * chosen_asteroid_index
 	# Define a quantidade de pontos baseada em qual asteroid foi criado
-	points_by_asteroid += chosen_asteroid_index * 50
+	points_by_asteroid += chosen_asteroid_index * 25

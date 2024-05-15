@@ -39,7 +39,6 @@ wait_time = 0.2
 autostart = true
 
 [node name="increase_ast_speed_timer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [node name="hud" type="CanvasLayer" parent="."]

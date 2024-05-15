@@ -7,6 +7,7 @@ class_name Level
 @onready var hit_points_label: Label = $hud/CenterContainer/HBoxContainer/hit_points
 @onready var score_label: Label = %score
 @onready var score_points: int = 0
+var high_score: int = 0
 var explosion = Global.explosion_node
 var score_draw: int = 0
 var displacement: int = 0
@@ -19,16 +20,17 @@ func _ready() -> void:
 	Global.game_over = false
 	Global.level_node = self
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	move_backgroung()
 	update_score()
 	update_hit_points()
-	if ship_life == 0:
-		game_over_menu.show_game_over_screen()
 
 ## Subtrai a vida da nave
 func subtract_ship_life() -> void:
 	ship_life -= 1
+	Global.ship_node.play_damage_animation()
+	if ship_life == 0:
+		game_over_menu.show_game_over_screen()
 	# tocar a animação de dano da ship
 
 ## Controla o nascimento dos asteróides em uma posição aleatória
@@ -40,7 +42,7 @@ func _on_asteroid_spawn_timer_timeout() -> void:
 ## Timer que controla a velocidade dos asteroids criados
 func _on_increase_ast_speed_timer_timeout() -> void:
 	speed_factor += 1
-	speed_factor = min(speed_factor, 10)
+	speed_factor = min(speed_factor, 15)
 
 ## Adiciona pontos ao nível
 func add_points(points: int) -> void:
