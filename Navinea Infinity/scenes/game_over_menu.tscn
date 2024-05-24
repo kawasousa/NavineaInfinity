@@ -1,106 +1,133 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv4ua640tlm6o"]
+[gd_scene load_steps=12 format=3 uid="uid://dv4ua640tlm6o"]
 
-[ext_resource type="Shader" path="res://shader/start_menu_bg.gdshader" id="1_fbuwd"]
-[ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_jp1qi"]
 [ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_rbyxm"]
 [ext_resource type="Texture2D" uid="uid://dtfiij6mhsi60" path="res://assets/game_over_screen.png" id="2_v5y55"]
 [ext_resource type="Theme" uid="uid://cmwgba5ocfaeu" path="res://themes/game_over.tres" id="3_cqc4q"]
+[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="4_054d1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_13ggf"]
-shader = ExtResource("1_fbuwd")
-shader_parameter/vel = -0.25
-
-[sub_resource type="Animation" id="Animation_73t8q"]
+[sub_resource type="Animation" id="Animation_pst2x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../game_over_rect:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -50)]
+"values": [Vector2(0, -6.134)]
 }
 
-[sub_resource type="Animation" id="Animation_g0a6x"]
+[sub_resource type="Animation" id="Animation_e84m7"]
 resource_name = "floating"
+length = 1.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../game_over_rect:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -15), Vector2(0, 0)]
+"values": [Vector2(0, -18.634), Vector2(0, 6.366)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtbv5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0i2ik"]
 _data = {
-"RESET": SubResource("Animation_73t8q"),
-"floating": SubResource("Animation_g0a6x")
+"RESET": SubResource("Animation_pst2x"),
+"floating": SubResource("Animation_e84m7")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_22gnj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jd1x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jm3wy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chm5m"]
 
 [node name="game_over_menu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_rbyxm")
 
-[node name="background" type="TextureRect" parent="."]
-visible = false
-texture_repeat = 2
-material = SubResource("ShaderMaterial_13ggf")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_jp1qi")
-
 [node name="game_over_rect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -6.13385
-offset_bottom = -6.13385
+offset_top = -6.134
+offset_bottom = -13.134
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_v5y55")
 
 [node name="floating_animation" type="AnimationPlayer" parent="game_over_rect"]
-reset_on_save = false
-root_node = NodePath("../../background")
 libraries = {
-"": SubResource("AnimationLibrary_gtbv5")
+"": SubResource("AnimationLibrary_0i2ik")
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 302.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 363.0
+offset_top = 519.0
+offset_right = 596.0
+offset_bottom = 577.0
 theme_override_constants/separation = 20
 
-[node name="restart" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_cqc4q")
 text = "tentar novamente"
 
-[node name="quit_to_menu" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="quit_to_menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_cqc4q")
 text = "menu inicial"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/restart" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/quit_to_menu" to="." method="_on_quit_to_menu_pressed"]
+[node name="high_score" type="Label" parent="."]
+offset_left = 392.0
+offset_top = 717.0
+offset_right = 544.0
+offset_bottom = 737.0
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_fonts/font = ExtResource("4_054d1")
+text = "recorde: 0"
+
+[node name="new_high_score" type="Node2D" parent="."]
+
+[node name="high_score_user" type="TextEdit" parent="new_high_score"]
+offset_left = 357.0
+offset_top = 753.0
+offset_right = 591.0
+offset_bottom = 788.0
+theme_override_fonts/font = ExtResource("4_054d1")
+placeholder_text = "seu nome"
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+draw_control_chars = true
+
+[node name="set_new_high_score_player" type="Button" parent="new_high_score"]
+offset_left = 368.0
+offset_top = 800.0
+offset_right = 560.0
+offset_bottom = 835.0
+theme_override_colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0.972549, 0.815686, 1)
+theme_override_colors/font_hover_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_colors/font_focus_color = Color(0.533333, 0.752941, 0.439216, 1)
+theme_override_fonts/font = ExtResource("4_054d1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_22gnj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7jd1x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jm3wy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_chm5m")
+text = "novo recorde"
+
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_to_menu" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_set_new_high_score_player_pressed"]

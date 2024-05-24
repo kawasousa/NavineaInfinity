@@ -12,3 +12,7 @@ func _on_animation_finished():
 func play_animation():
 	show()
 	play("explosion")
+
+func show_explosion_animation(asteroid_global_position) -> void:
+	Global.explosion_node.global_position = asteroid_global_position
+	Global.explosion_node.play_animation()

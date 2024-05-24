@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_ssecl"]
 [ext_resource type="PackedScene" uid="uid://bdmeuno5tx0gb" path="res://scenes/ship.tscn" id="2_eng7i"]
 [ext_resource type="Shader" path="res://shader/level.gdshader" id="2_i8qum"]
-[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="6_02kwh"]
+[ext_resource type="PackedScene" uid="uid://c2us8qxbbrurn" path="res://scenes/hud.tscn" id="5_3248w"]
 [ext_resource type="PackedScene" uid="uid://dv4ua640tlm6o" path="res://scenes/game_over_menu.tscn" id="7_xl6ra"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dmqfg"]
@@ -41,36 +41,14 @@ autostart = true
 [node name="increase_ast_speed_timer" type="Timer" parent="."]
 autostart = true
 
-[node name="hud" type="CanvasLayer" parent="."]
+[node name="Canvas" type="Node2D" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="hud"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
+[node name="hud" parent="Canvas" instance=ExtResource("5_3248w")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="hud/CenterContainer"]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_constants/separation = 50
-alignment = 1
-
-[node name="score" type="Label" parent="hud/CenterContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("6_02kwh")
-text = "score: 0"
-
-[node name="hit_points" type="Label" parent="hud/CenterContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_02kwh")
-text = "hp = 4"
-
-[node name="game_over_menu" parent="." instance=ExtResource("7_xl6ra")]
+[node name="game_over_menu" parent="Canvas" instance=ExtResource("7_xl6ra")]
 visible = false
+
+[node name="explosion_group" type="Node2D" parent="."]
 
 [connection signal="timeout" from="asteroid_spawn_timer" to="." method="_on_asteroid_spawn_timer_timeout"]
 [connection signal="timeout" from="increase_ast_speed_timer" to="." method="_on_increase_ast_speed_timer_timeout"]

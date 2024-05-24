@@ -6,8 +6,15 @@ res://scenes/global.tscn
 res://scenes/game_over_menu.tscn
 res://scenes/ship.tscn
 res://scenes/asteroid.tscn
+res://scripts/asteroid.gd
+res://scenes/explosion.tscn
+res://scripts/explosion.gd
 res://scripts/level.gd
+res://scripts/Global.gd
+res://scenes/hud.tscn
+res://scripts/hud.gd
+res://scripts/start_menu.gd
 res://scripts/ship.gd
 res://scripts/game_over_menu.gd
-res://scripts/asteroid.gd
-res://scripts/Global.gd
+res://scripts/shoot.gd
+res://scenes/shoot.tscn

@@ -1,40 +1,40 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715772018
-::res://assets/::1715771960
-asteroid-1.png::CompressedTexture2D::4085665195561120858::1715771959::1715771959::1::::<><>::
-asteroid-2.png::CompressedTexture2D::8853033952461074007::1715771959::1715771959::1::::<><>::
-background.png::CompressedTexture2D::5894687683694726161::1715771959::1715771959::1::::<><>::
-big_planet.png::CompressedTexture2D::898878252693730734::1715771959::1715771959::1::::<><>::
-canvas.png::CompressedTexture2D::6504904305419338551::1715771959::1715771960::1::::<><>::
-canvastotext.png::CompressedTexture2D::8111687558909923855::1715771960::1715771960::1::::<><>::
-explosion.png::CompressedTexture2D::6089334845971951799::1715771960::1715771960::1::::<><>::
-game_over_screen.png::CompressedTexture2D::8503672512419973655::1715771960::1715771960::1::::<><>::
-ship.png::CompressedTexture2D::2998616051274554710::1715771960::1715771960::1::::<><>::
-shoot.png::CompressedTexture2D::6326749111239272346::1715771960::1715771960::1::::<><>::
-start_screen.png::CompressedTexture2D::6853246542712441366::1715771960::1715771960::1::::<><>::
-::res://fonts/::1715771960
-Early GameBoy.ttf::FontFile::3435380353989637837::1715771960::1715771960::1::::<><>::
-::res://scenes/::1715771960
-asteroid.tscn::PackedScene::7150342380025102196::1715771960::0::1::::<><>::res://scripts/asteroid.gd<>uid://byhekra7l3t83::::res://assets/asteroid-1.png<>uid://dyeqf8f1ri6w6::::res://assets/asteroid-2.png<>uid://cbc65b3whv5wm::::res://scenes/explosion.tscn
-explosion.tscn::PackedScene::4849094863912929608::1715771960::0::1::::<><>::uid://cs0ypqjfh8304::::res://assets/explosion.png<>res://scripts/explosion.gd
-game_over_menu.tscn::PackedScene::8694310736385951812::1715771960::0::1::::<><>::res://shader/start_menu_bg.gdshader<>uid://cp8ov6sftk706::::res://assets/background.png<>res://scripts/game_over_menu.gd<>uid://dtfiij6mhsi60::::res://assets/game_over_screen.png<>uid://cmwgba5ocfaeu::::res://themes/game_over.tres
-global.tscn::PackedScene::6376529509135356373::1715771960::0::1::::<><>::res://scripts/Global.gd
-level.tscn::PackedScene::7819962491428010984::1715771960::0::1::::<><>::res://scripts/level.gd<>uid://cp8ov6sftk706::::res://assets/background.png<>uid://bdmeuno5tx0gb::::res://scenes/ship.tscn<>res://shader/level.gdshader<>uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf<>uid://dv4ua640tlm6o::::res://scenes/game_over_menu.tscn
-ship.tscn::PackedScene::2622039037325279193::1715771960::0::1::::<><>::uid://biys1ed0dsrwg::::res://assets/ship.png<>res://scripts/ship.gd
-shoot.tscn::PackedScene::5275156406219492356::1715771960::0::1::::<><>::uid://cweyvslts6u15::::res://assets/shoot.png<>res://scripts/shoot.gd
-start_menu.tscn::PackedScene::3066772613153592939::1715771960::0::1::::<><>::uid://cp8ov6sftk706::::res://assets/background.png<>res://scripts/start_menu.gd<>res://shader/start_menu_bg.gdshader<>uid://c4v077q3uxy3g::::res://assets/start_screen.png<>uid://cmwgba5ocfaeu::::res://themes/game_over.tres
-::res://scripts/::1715771960
-asteroid.gd::GDScript::-1::1715771960::0::1::::<>Area2D<>::
-explosion.gd::GDScript::-1::1715771960::0::1::::<>AnimatedSprite2D<>::
-game_over_menu.gd::GDScript::-1::1715771960::0::1::::<>CanvasLayer<>::
-Global.gd::GDScript::-1::1715771960::0::1::::<>Node<>::
-level.gd::GDScript::-1::1715771960::0::1::::Level<>Control<>::
-ship.gd::GDScript::-1::1715771960::0::1::::<>CharacterBody2D<>::
-shoot.gd::GDScript::-1::1715771960::0::1::::<>Area2D<>::
-start_menu.gd::GDScript::-1::1715771960::0::1::::<>Control<>::
-::res://shader/::1715771960
-level.gdshader::Shader::-1::1715771960::0::1::::<><>::
-start_menu_bg.gdshader::Shader::-1::1715771960::0::1::::<><>::
-::res://themes/::1715771960
-game_over.tres::Theme::5660889936365507236::1715771960::0::1::::<><>::uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf
-start_menu.tres::Theme::6167301231745581657::1715771960::0::1::::<><>::uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf
+::res://::1716576035
+::res://assets/::1716575936
+asteroid-1.png::CompressedTexture2D::4085665195561120858::1716575936::1716575936::1::::<><>::
+asteroid-2.png::CompressedTexture2D::8853033952461074007::1716575936::1716575936::1::::<><>::
+background.png::CompressedTexture2D::5894687683694726161::1716575936::1716575936::1::::<><>::
+big_planet.png::CompressedTexture2D::898878252693730734::1716575936::1716575936::1::::<><>::
+canvas.png::CompressedTexture2D::6504904305419338551::1716575936::1716575936::1::::<><>::
+canvastotext.png::CompressedTexture2D::8111687558909923855::1716575936::1716575936::1::::<><>::
+explosion.png::CompressedTexture2D::6089334845971951799::1716575936::1716575936::1::::<><>::
+game_over_screen.png::CompressedTexture2D::8503672512419973655::1716575936::1716575936::1::::<><>::
+ship.png::CompressedTexture2D::2998616051274554710::1716575936::1716575936::1::::<><>::
+shoot.png::CompressedTexture2D::6326749111239272346::1716575936::1716575936::1::::<><>::
+start_screen.png::CompressedTexture2D::6853246542712441366::1716575936::1716575936::1::::<><>::
+::res://fonts/::1716575936
+Early GameBoy.ttf::FontFile::3435380353989637837::1716575936::1716575936::1::::<><>::
+::res://scenes/::1716575936
+asteroid.tscn::PackedScene::7150342380025102196::1716575936::0::1::::<><>::res://scripts/asteroid.gd<>uid://byhekra7l3t83::::res://assets/asteroid-1.png<>uid://dyeqf8f1ri6w6::::res://assets/asteroid-2.png<>uid://cbc65b3whv5wm::::res://scenes/explosion.tscn
+explosion.tscn::PackedScene::4849094863912929608::1716575936::0::1::::<><>::uid://cs0ypqjfh8304::::res://assets/explosion.png<>res://scripts/explosion.gd
+game_over_menu.tscn::PackedScene::8694310736385951812::1716575936::0::1::::<><>::res://shader/start_menu_bg.gdshader<>uid://cp8ov6sftk706::::res://assets/background.png<>res://scripts/game_over_menu.gd<>uid://dtfiij6mhsi60::::res://assets/game_over_screen.png<>uid://cmwgba5ocfaeu::::res://themes/game_over.tres
+global.tscn::PackedScene::6376529509135356373::1716575936::0::1::::<><>::res://scripts/Global.gd
+level.tscn::PackedScene::7819962491428010984::1716575936::0::1::::<><>::res://scripts/level.gd<>uid://cp8ov6sftk706::::res://assets/background.png<>uid://bdmeuno5tx0gb::::res://scenes/ship.tscn<>res://shader/level.gdshader<>uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf<>uid://dv4ua640tlm6o::::res://scenes/game_over_menu.tscn
+ship.tscn::PackedScene::2622039037325279193::1716575936::0::1::::<><>::uid://biys1ed0dsrwg::::res://assets/ship.png<>res://scripts/ship.gd
+shoot.tscn::PackedScene::5275156406219492356::1716575936::0::1::::<><>::uid://cweyvslts6u15::::res://assets/shoot.png<>res://scripts/shoot.gd
+start_menu.tscn::PackedScene::3066772613153592939::1716575936::0::1::::<><>::uid://cp8ov6sftk706::::res://assets/background.png<>res://scripts/start_menu.gd<>res://shader/start_menu_bg.gdshader<>uid://c4v077q3uxy3g::::res://assets/start_screen.png<>uid://cmwgba5ocfaeu::::res://themes/game_over.tres
+::res://scripts/::1716575936
+asteroid.gd::GDScript::-1::1716575936::0::1::::<>Area2D<>::
+explosion.gd::GDScript::-1::1716575936::0::1::::<>AnimatedSprite2D<>::
+game_over_menu.gd::GDScript::-1::1716575936::0::1::::<>CanvasLayer<>::
+Global.gd::GDScript::-1::1716575936::0::1::::<>Node<>::
+level.gd::GDScript::-1::1716575936::0::1::::Level<>Control<>::
+ship.gd::GDScript::-1::1716575936::0::1::::<>CharacterBody2D<>::
+shoot.gd::GDScript::-1::1716575936::0::1::::<>Area2D<>::
+start_menu.gd::GDScript::-1::1716575936::0::1::::<>Control<>::
+::res://shader/::1716575936
+level.gdshader::Shader::-1::1716575936::0::1::::<><>::
+start_menu_bg.gdshader::Shader::-1::1716575936::0::1::::<><>::
+::res://themes/::1716575936
+game_over.tres::Theme::5660889936365507236::1716575936::0::1::::<><>::uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf
+start_menu.tres::Theme::6167301231745581657::1716575936::0::1::::<><>::uid://bo7ehhwxixleb::::res://fonts/Early GameBoy.ttf

@@ -23,6 +23,7 @@ Global="*res://scenes/global.tscn"
 
 window/size/viewport_width=960
 window/size/viewport_height=864
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]

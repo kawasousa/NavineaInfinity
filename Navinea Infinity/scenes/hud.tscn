@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2us8qxbbrurn"]
+
+[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="1_27rfc"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_e05ph"]
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_e05ph")
+
+[node name="score" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 20.0
+offset_right = 483.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_27rfc")
+text = "score: 99999"
+
+[node name="hit_points" type="Label" parent="."]
+offset_left = 533.0
+offset_top = 20.0
+offset_right = 661.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_27rfc")
+text = "hp: <<<<"

@@ -5,7 +5,7 @@ extends Area2D
 var chosen_asteroid_index: int
 var speed: int = 0
 var points_by_asteroid: int = 0
-
+const EXPLOSION = preload("res://scenes/explosion.tscn")
 
 func _ready():
 	choose_random_asteroid()
@@ -17,7 +17,7 @@ func _process(delta):
 ## Verifica se a nave bateu no asteroid
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		Global.level_node.subtract_ship_life()
+		Global.subtract_player_hp()
 		queue_free()
 
 ## Verifica se o tiro bateu no asteroid
@@ -25,9 +25,11 @@ func _on_area_entered(area):
 	if area.is_in_group("PlayerProjectiles"):
 		area.queue_free()
 		queue_free()
-		Global.level_node.add_points(points_by_asteroid)
-		## Dá play na animação da explosão quando o asteroide for destruido
-		#Global.level_node.show_explosion_animation(global_position)
+		var explosion = EXPLOSION.instantiate()
+		get_parent().get_parent().get_node("explosion_group").add_child(explosion)
+		explosion.global_position = global_position
+		Global.explosion_node.show_explosion_animation(global_position)
+		Global.add_points(points_by_asteroid)
 
 ## Apaga o asteroid se ele sai da tela
 func _on_visible_on_screen_notifier_2d_screen_exited():

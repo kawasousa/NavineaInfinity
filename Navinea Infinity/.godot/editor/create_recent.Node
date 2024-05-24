@@ -1,8 +1,12 @@
-Timer
-AnimationPlayer
-Node
+Button
+CheckButton
+Node2D
 Label
+TextEdit
+CenterContainer
+VBoxContainer
+AnimationPlayer
+Timer
+Node
 MarginContainer
 TextureRect
-Button
-VBoxContainer

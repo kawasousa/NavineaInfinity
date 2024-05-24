@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
-@onready var game_over_menu = $"../game_over_menu"
+@onready var animated_sprite_2d = $AnimatedSprite2D
 var max_shoot = 4
 const SPEED = 30000
 const RECOIL = -4000
 const PRE_SHOOT = preload("res://scenes/shoot.tscn")
 
 func _ready():
-	Global.ship_node = self
+	Global.player_node = self
 
 func _physics_process(delta):
 	## Mantem a nave dentro dos limites da tela
@@ -32,10 +32,10 @@ func _physics_process(delta):
 func shoot():
 	if Input.is_action_just_pressed("shoot"):
 		if get_tree().get_nodes_in_group("PlayerProjectiles").size() < max_shoot:
-			var shoot = PRE_SHOOT.instantiate()
-			get_parent().get_node("shoot_group").add_child(shoot)
-			shoot.global_position = Vector2(global_position.x + 56, global_position.y)
-			shoot.add_to_group("PlayerProjectiles")
+			var shoot_instance = PRE_SHOOT.instantiate()
+			get_parent().get_node("shoot_group").add_child(shoot_instance)
+			shoot_instance.global_position = Vector2(global_position.x + 56, global_position.y)
+			shoot_instance.add_to_group("PlayerProjectiles")
 
 func play_damage_animation() -> void:
 	animation_player.play("damage_animation")
@@ -60,5 +60,5 @@ func movement(delta):
 	else:
 		## Se o player não se movimentar, a nave terá um recuo automático para a esquerda
 		velocity.x = RECOIL * delta
-
+		
 	move_and_slide()
