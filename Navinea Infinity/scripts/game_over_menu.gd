@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var high_score = $high_score
 @onready var high_score_user: TextEdit = $new_high_score/high_score_user
 var game_over_checker: bool = false
+var new_hscore_setter: bool = false
 
 
 func _ready():
@@ -46,13 +47,16 @@ func update_high_score_label() -> void:
 	high_score.text = "recorde: " + str(Global.high_score)
 
 func set_new_high_score() -> void:
-	if Global.new_high_score == true:
+	if Global.new_high_score == true and new_hscore_setter == false:
 		high_score_user.editable = true
 		high_score_user.placeholder_text = "seu nome"
+	else:
+		high_score_user.editable = false
+		print("Não foi um novo recorde. Editavel tá falso.")
 
 func _on_set_new_high_score_player_pressed():
 	Global.high_score_player = high_score_user.text
 	Global.new_high_score = false
-	high_score_user.editable = false
+	new_hscore_setter = true
 	print(Global.high_score_player)
 	

@@ -104,7 +104,6 @@ offset_top = 753.0
 offset_right = 591.0
 offset_bottom = 788.0
 theme_override_fonts/font = ExtResource("4_054d1")
-placeholder_text = "seu nome"
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
