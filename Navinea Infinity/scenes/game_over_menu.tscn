@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv4ua640tlm6o"]
+[gd_scene load_steps=13 format=3 uid="uid://dv4ua640tlm6o"]
 
 [ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_rbyxm"]
 [ext_resource type="Texture2D" uid="uid://dtfiij6mhsi60" path="res://assets/game_over_screen.png" id="2_v5y55"]
@@ -42,6 +42,11 @@ _data = {
 "RESET": SubResource("Animation_pst2x"),
 "floating": SubResource("Animation_e84m7")
 }
+
+[sub_resource type="Theme" id="Theme_3g51q"]
+TextEdit/colors/background_color = Color(0.203922, 0.407843, 0.337255, 1)
+TextEdit/colors/font_color = Color(0.878431, 0.972549, 0.815686, 1)
+TextEdit/colors/font_placeholder_color = Color(0.878431, 0.972549, 0.815686, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_22gnj"]
 
@@ -99,10 +104,18 @@ text = "recorde: 0"
 [node name="new_high_score" type="Node2D" parent="."]
 
 [node name="high_score_user" type="TextEdit" parent="new_high_score"]
-offset_left = 357.0
-offset_top = 753.0
-offset_right = 591.0
-offset_bottom = 788.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 756.0
+offset_right = 589.0
+offset_bottom = 791.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3g51q")
 theme_override_fonts/font = ExtResource("4_054d1")
 selecting_enabled = false
 drag_and_drop_selection_enabled = false

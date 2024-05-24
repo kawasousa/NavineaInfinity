@@ -52,7 +52,6 @@ func set_new_high_score() -> void:
 		high_score_user.placeholder_text = "seu nome"
 	else:
 		high_score_user.editable = false
-		print("Não foi um novo recorde. Editavel tá falso.")
 
 func _on_set_new_high_score_player_pressed():
 	Global.high_score_player = high_score_user.text
