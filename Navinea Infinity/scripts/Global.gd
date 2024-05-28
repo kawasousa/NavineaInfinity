@@ -7,6 +7,7 @@ var game_over: bool = false
 var high_score: int = 0
 var high_score_player: String = ""
 var new_high_score: bool = false
+var new_hscore_checker: bool = false
 var player_score: int = 0
 var max_player_hp: int = 4
 var player_hp: int = max_player_hp
@@ -39,7 +40,9 @@ func restart_game_values() -> void:
 	player_hp = max_player_hp
 	player_score = 0
 	new_high_score = false
+	new_hscore_checker = false
 
 func set_new_high_score() -> void:
-	if player_score >= high_score:
+	if player_score >= high_score and new_hscore_checker == false:
 		new_high_score = true
+		new_hscore_checker = true

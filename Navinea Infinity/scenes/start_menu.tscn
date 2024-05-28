@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjxtkdgqfrrrn"]
+[gd_scene load_steps=8 format=3 uid="uid://bjxtkdgqfrrrn"]
 
 [ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_hv3ot"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_spu02"]
 [ext_resource type="Shader" path="res://shader/start_menu_bg.gdshader" id="2_ouu23"]
 [ext_resource type="Texture2D" uid="uid://c4v077q3uxy3g" path="res://assets/start_screen.png" id="2_x745w"]
 [ext_resource type="Theme" uid="uid://cmwgba5ocfaeu" path="res://themes/game_over.tres" id="5_c7rbd"]
+[ext_resource type="Texture2D" uid="uid://c1afcv5revpql" path="res://assets/button_icon.png" id="6_iawxg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vxr7"]
 shader = ExtResource("2_ouu23")
@@ -64,14 +65,20 @@ layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 1.5
 theme = ExtResource("5_c7rbd")
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_constants/h_separation = 10
 text = "Novo Jogo"
+icon = ExtResource("6_iawxg")
 alignment = 0
 
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 theme = ExtResource("5_c7rbd")
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_constants/h_separation = 10
 text = "Sair"
+icon = ExtResource("6_iawxg")
 alignment = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]

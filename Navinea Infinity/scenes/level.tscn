@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://djobv0rw41w8o"]
+[gd_scene load_steps=9 format=3 uid="uid://djobv0rw41w8o"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_7xslx"]
 [ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_ssecl"]
 [ext_resource type="PackedScene" uid="uid://bdmeuno5tx0gb" path="res://scenes/ship.tscn" id="2_eng7i"]
 [ext_resource type="Shader" path="res://shader/level.gdshader" id="2_i8qum"]
 [ext_resource type="PackedScene" uid="uid://c2us8qxbbrurn" path="res://scenes/hud.tscn" id="5_3248w"]
+[ext_resource type="PackedScene" uid="uid://dgw6vtudok5tv" path="res://scenes/tutorial.tscn" id="7_eedix"]
 [ext_resource type="PackedScene" uid="uid://dv4ua640tlm6o" path="res://scenes/game_over_menu.tscn" id="7_xl6ra"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dmqfg"]
@@ -47,6 +48,8 @@ autostart = true
 
 [node name="game_over_menu" parent="Canvas" instance=ExtResource("7_xl6ra")]
 visible = false
+
+[node name="tutorial" parent="." instance=ExtResource("7_eedix")]
 
 [node name="explosion_group" type="Node2D" parent="."]
 
