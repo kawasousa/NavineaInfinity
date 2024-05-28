@@ -75,8 +75,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -6.134
-offset_right = 960.0
-offset_bottom = 857.866
+offset_bottom = -6.13397
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_v5y55")
@@ -90,10 +89,9 @@ autoplay = "floating"
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 363.0
 offset_top = 519.0
-offset_right = 596.0
+offset_right = 614.0
 offset_bottom = 577.0
 theme_override_constants/separation = 20
-alignment = 1
 
 [node name="restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -135,9 +133,11 @@ offset_bottom = 791.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_3g51q")
+theme_override_constants/minimum_character_width = 3
 theme_override_fonts/font = ExtResource("4_054d1")
 alignment = 1
 max_length = 10
+shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false

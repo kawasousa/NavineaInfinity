@@ -46,10 +46,10 @@ autostart = true
 
 [node name="hud" parent="Canvas" instance=ExtResource("5_3248w")]
 
+[node name="tutorial" parent="Canvas" instance=ExtResource("7_eedix")]
+
 [node name="game_over_menu" parent="Canvas" instance=ExtResource("7_xl6ra")]
 visible = false
-
-[node name="tutorial" parent="." instance=ExtResource("7_eedix")]
 
 [node name="explosion_group" type="Node2D" parent="."]
 
