@@ -1,8 +1,8 @@
+MarginContainer
 Node2D
 ColorRect
 AnimationPlayer
 Label
-MarginContainer
 HBoxContainer
 PanelContainer
 Panel

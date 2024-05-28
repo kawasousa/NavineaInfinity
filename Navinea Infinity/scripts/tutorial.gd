@@ -30,4 +30,5 @@ func _process(delta):
 		pressed_keys += 1
 	
 	if pressed_keys == 5:
+		visible = false
 		Global.level_node.can_spawn_enemies = true

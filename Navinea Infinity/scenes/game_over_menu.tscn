@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dv4ua640tlm6o"]
+[gd_scene load_steps=19 format=3 uid="uid://dv4ua640tlm6o"]
 
 [ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_rbyxm"]
 [ext_resource type="Texture2D" uid="uid://dtfiij6mhsi60" path="res://assets/game_over_screen.png" id="2_v5y55"]
@@ -51,6 +51,15 @@ TextEdit/colors/font_placeholder_color = Color(0.878431, 0.972549, 0.815686, 1)
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01vsu"]
+bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eenbc"]
+bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okvk7"]
+bg_color = Color(0.0313726, 0.0941176, 0.12549, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_22gnj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jd1x"]
@@ -70,17 +79,18 @@ events = [SubResource("InputEventKey_7ua87")]
 process_mode = 3
 script = ExtResource("1_rbyxm")
 
-[node name="game_over_rect" type="TextureRect" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -6.134
-offset_bottom = -6.13397
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="game_over_rect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
 texture = ExtResource("2_v5y55")
 
-[node name="floating_animation" type="AnimationPlayer" parent="game_over_rect"]
+[node name="floating_animation" type="AnimationPlayer" parent="MarginContainer/game_over_rect"]
 libraries = {
 "": SubResource("AnimationLibrary_0i2ik")
 }
@@ -133,8 +143,10 @@ offset_bottom = 791.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_3g51q")
-theme_override_constants/minimum_character_width = 3
 theme_override_fonts/font = ExtResource("4_054d1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_01vsu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_eenbc")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_okvk7")
 alignment = 1
 max_length = 10
 shortcut_keys_enabled = false
@@ -144,9 +156,9 @@ drag_and_drop_selection_enabled = false
 draw_control_chars = true
 
 [node name="set_new_high_score_player" type="Button" parent="new_high_score"]
-offset_left = 368.0
+offset_left = 330.0
 offset_top = 800.0
-offset_right = 560.0
+offset_right = 605.0
 offset_bottom = 835.0
 theme = ExtResource("3_cqc4q")
 theme_override_colors/font_color = Color(0.533333, 0.752941, 0.439216, 1)
@@ -158,7 +170,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7jd1x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jm3wy")
 theme_override_styles/focus = SubResource("StyleBoxTexture_chm5m")
 shortcut = SubResource("Shortcut_3g8ls")
-text = "novo recorde"
+text = "pressione enter
+"
 icon = ExtResource("5_pr7po")
 clip_text = true
 

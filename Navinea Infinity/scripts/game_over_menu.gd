@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var floating_animation: AnimationPlayer = $game_over_rect/floating_animation
+@onready var floating_animation = $MarginContainer/game_over_rect/floating_animation
 @onready var restart: Button = $VBoxContainer/restart
 @onready var high_score: Label = $high_score
 @onready var high_score_user: LineEdit = $new_high_score/high_score_user
@@ -12,6 +12,8 @@ var new_hscore_setter: bool = false
 func _ready():
 	high_score_user.editable = false
 	high_score_user.placeholder_text = Global.high_score_player
+	set_new_high_score_player.disabled = false
+	set_new_high_score_player.visible = true
 
 func _process(delta):
 	show_game_over_screen()
@@ -59,7 +61,7 @@ func update_high_score_label() -> void:
 func set_new_high_score() -> void:
 	if Global.new_high_score == true and new_hscore_setter == false:
 		high_score_user.editable = true
-		high_score_user.placeholder_text = "seu nome"
+		high_score_user.placeholder_text = Global.high_score_player
 	else:
 		high_score_user.editable = false
 		set_new_high_score_player.disabled = true
