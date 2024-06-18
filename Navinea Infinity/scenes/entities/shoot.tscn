@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://chflb46r743ns"]
 
-[ext_resource type="Texture2D" uid="uid://cweyvslts6u15" path="res://assets/shoot.png" id="1_42hpp"]
-[ext_resource type="Script" path="res://scripts/shoot.gd" id="1_wlou2"]
+[ext_resource type="Script" path="res://scripts/entities/shoot.gd" id="1_xqq6f"]
+[ext_resource type="Texture2D" uid="uid://cweyvslts6u15" path="res://assets/shoot.png" id="2_7tyr4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vxpo"]
-atlas = ExtResource("1_42hpp")
+atlas = ExtResource("2_7tyr4")
 region = Rect2(0, 0, 6, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0ndy"]
-atlas = ExtResource("1_42hpp")
+atlas = ExtResource("2_7tyr4")
 region = Rect2(6, 0, 6, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_noik4"]
@@ -32,7 +32,7 @@ radius = 8.06226
 rotation = 1.5708
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_wlou2")
+script = ExtResource("1_xqq6f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.49691e-07, 8)

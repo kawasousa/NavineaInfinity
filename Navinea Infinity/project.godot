@@ -11,20 +11,27 @@ config_version=5
 [application]
 
 config/name="NavineaInfinity"
-run/main_scene="res://scenes/start_menu.tscn"
+run/main_scene="res://scenes/entities/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/asteroid-1.png"
 
 [autoload]
 
-Global="*res://scenes/global.tscn"
+Global="*res://autoload/global.tscn"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=864
-window/size/mode=2
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://scenes/": "red",
+"res://scripts/": "purple"
+}
 
 [gui]
 

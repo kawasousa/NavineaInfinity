@@ -1,13 +1,11 @@
-res://scenes/tutorial.tscn
+res://scenes/hud.tscn
 res://shader/start_menu_bg.gdshader
 res://shader/level.gdshader
-res://scenes/hud.tscn
 res://scenes/shoot.tscn
 res://scenes/asteroid.tscn
 res://scenes/game_over_menu.tscn
 res://scenes/start_menu.tscn
-res://scripts/tutorial.gd
+res://scenes/tutorial.tscn
 res://scenes/level.tscn
-res://scripts/level.gd
-res://scripts/game_over_menu.gd
-res://scripts/Global.gd
+res://scripts/tutorial.gd
+res://scenes/entities/shoot.tscn
