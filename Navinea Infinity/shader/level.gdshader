@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float vel = - .3f;
+uniform float vel = -0.025f;
 uniform float displacement = .0f;
 
 void fragment(){

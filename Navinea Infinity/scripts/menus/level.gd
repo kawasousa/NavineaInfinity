@@ -4,7 +4,7 @@ class_name Level
 @onready var background_material: ShaderMaterial = $background.material
 @onready var game_over_menu = $Canvas/game_over_menu
 var displacement: int = 0
-var pre_asteroid = preload("res://scenes/asteroid.tscn")
+var pre_asteroid = preload("res://scenes/entities/asteroid.tscn")
 var speed_factor : int = 1
 var can_spawn_enemies: bool = false
 

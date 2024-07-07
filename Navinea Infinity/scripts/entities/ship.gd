@@ -6,7 +6,7 @@ extends CharacterBody2D
 var max_shoot = 4
 const SPEED = 30000
 const RECOIL = -4000
-const PRE_SHOOT = preload("res://scenes/shoot.tscn")
+const PRE_SHOOT = preload("res://scenes/entities/shoot.tscn")
 
 func _ready():
 	Global.player_node = self
@@ -22,6 +22,7 @@ func _physics_process(delta):
 	if Global.game_over:
 		_canMove = false
 		_canShoot = false
+		die()
 	
 	if _canMove:
 		movement(delta)
@@ -62,3 +63,8 @@ func movement(delta):
 		velocity.x = RECOIL * delta
 		
 	move_and_slide()
+
+func die() -> void:
+	animated_sprite_2d.play("idle")
+	rotate(0.001)
+	global_position.x -= 0.5

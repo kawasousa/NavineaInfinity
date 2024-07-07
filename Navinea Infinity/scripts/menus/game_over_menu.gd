@@ -7,9 +7,11 @@ extends CanvasLayer
 @onready var set_new_high_score_player: Button = $new_high_score/set_new_high_score_player
 var button_focus_checker: bool = false
 var new_hscore_setter: bool = false
+var score_draw: int
 
 
 func _ready():
+	score_draw = 0
 	high_score_user.editable = false
 	high_score_user.placeholder_text = Global.high_score_player
 	set_new_high_score_player.disabled = false
@@ -17,7 +19,6 @@ func _ready():
 
 func _process(delta):
 	show_game_over_screen()
-	update_high_score_label()
 	set_new_high_score()
 
 ## Se o botão de tentar novamente for clicado, a cena é reiniciada.
@@ -25,23 +26,21 @@ func _on_restart_pressed():
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
 	visible = false
-	Global.restart_game_values()
 
 ## Define as configurações da tela de game over
 func show_game_over_screen() -> void:
 	if Global.game_over:
 		Engine.time_scale = 0.3
 		visible = true
+		update_high_score_label()
 		grab_button_focus()
-		Global.player_node.animated_sprite_2d.play("idle")
-		Global.player_node.rotate(0.001)
-		Global.player_node.global_position.x -= 0.5
+		Global.player_node.die()
 		floating_animation.play("floating")
 
 ## Se o botão de sair for pressionado, a cena muda para o menu inicial
 func _on_quit_to_menu_pressed():
 	Engine.time_scale = 1
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")
 
 ## Define qual botão terá foco
 func grab_button_focus() -> void:
@@ -56,7 +55,11 @@ func grab_button_focus() -> void:
 			button_focus_checker = true
 
 func update_high_score_label() -> void:
-	high_score.text = "recorde: " + str(Global.high_score)
+	if score_draw != Global.high_score:
+		score_draw += 5
+	else:
+		score_draw = Global.high_score
+	high_score.text = "recorde: " + str(score_draw)
 
 func set_new_high_score() -> void:
 	if Global.new_high_score == true and new_hscore_setter == false:

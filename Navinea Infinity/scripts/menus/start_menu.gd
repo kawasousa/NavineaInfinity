@@ -1,13 +1,11 @@
 extends Control
 
-@onready var start_button: Button = $MarginContainer/VBoxContainer/start
+@onready var start_button: Button = $start
 
 func _ready() -> void:
 	start_button.grab_focus()
-	Global.game_over = false
+	Global.restart_game_values()
 
+##Muda a cena para o level
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level.tscn")
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/menus/level.tscn")

@@ -175,8 +175,8 @@ text = "pressione enter
 icon = ExtResource("5_pr7po")
 clip_text = true
 
-[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_to_menu" to="." method="_on_quit_to_menu_pressed"]
-[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_set_new_high_score_player_pressed"]
 [connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_set_new_high_score_player_pressed"]

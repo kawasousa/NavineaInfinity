@@ -5,7 +5,7 @@ extends Area2D
 var chosen_asteroid_index: int
 var speed: int = 0
 var points_by_asteroid: int = 0
-const EXPLOSION = preload("res://scenes/explosion.tscn")
+const EXPLOSION = preload("res://scenes/entities/explosion.tscn")
 
 func _ready():
 	choose_random_asteroid()
