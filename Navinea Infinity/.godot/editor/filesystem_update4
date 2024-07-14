@@ -1,9 +1,8 @@
-res://scenes/menus/game_over_menu.tscn
-res://shader/level.gdshader
-res://shader/start_menu_bg.gdshader
-res://scripts/menus/level.gd
-res://scripts/entities/asteroid.gd
-res://scripts/menus/start_menu.gd
-res://scripts/entities/ship.gd
-res://scripts/menus/game_over_menu.gd
 res://scenes/menus/start_menu.tscn
+res://shader/start_menu_bg.gdshader
+res://shader/level.gdshader
+res://shader/crt.gdshader
+res://scripts/menus/start_menu.gd
+res://scenes/menus/level.tscn
+res://scripts/menus/level.gd
+res://scenes/menus/game_over_menu.tscn

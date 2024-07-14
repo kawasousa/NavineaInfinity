@@ -1,6 +1,6 @@
 extends Control
 
-@onready var start_button: Button = $start
+@onready var start_button: Button = $SubViewportContainer/SubViewport/start
 
 func _ready() -> void:
 	start_button.grab_focus()

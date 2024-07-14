@@ -1,25 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dv4ua640tlm6o"]
+[gd_scene load_steps=18 format=3 uid="uid://dv4ua640tlm6o"]
 
 [ext_resource type="Script" path="res://scripts/menus/game_over_menu.gd" id="1_rbyxm"]
 [ext_resource type="Texture2D" uid="uid://dtfiij6mhsi60" path="res://assets/game_over_screen.png" id="2_v5y55"]
 [ext_resource type="Theme" uid="uid://cmwgba5ocfaeu" path="res://themes/game_over.tres" id="3_cqc4q"]
 [ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="4_054d1"]
 [ext_resource type="Texture2D" uid="uid://c1afcv5revpql" path="res://assets/button_icon.png" id="5_pr7po"]
-
-[sub_resource type="Animation" id="Animation_pst2x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -6.134)]
-}
 
 [sub_resource type="Animation" id="Animation_e84m7"]
 resource_name = "floating"
@@ -40,7 +25,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0i2ik"]
 _data = {
-"RESET": SubResource("Animation_pst2x"),
 "floating": SubResource("Animation_e84m7")
 }
 
@@ -175,8 +159,8 @@ text = "pressione enter
 icon = ExtResource("5_pr7po")
 clip_text = true
 
-[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_to_menu" to="." method="_on_quit_to_menu_pressed"]
-[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_set_new_high_score_player_pressed"]
+[connection signal="pressed" from="new_high_score/set_new_high_score_player" to="." method="_on_button_pressed"]

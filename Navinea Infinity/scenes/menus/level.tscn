@@ -1,12 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://djobv0rw41w8o"]
+[gd_scene load_steps=12 format=3 uid="uid://djobv0rw41w8o"]
 
 [ext_resource type="Script" path="res://scripts/menus/level.gd" id="1_7xslx"]
 [ext_resource type="Texture2D" uid="uid://cp8ov6sftk706" path="res://assets/background.png" id="1_ssecl"]
 [ext_resource type="PackedScene" uid="uid://bdmeuno5tx0gb" path="res://scenes/entities/player.tscn" id="2_eng7i"]
 [ext_resource type="Shader" path="res://shader/level.gdshader" id="2_i8qum"]
+[ext_resource type="Shader" path="res://shader/crt.gdshader" id="2_k8skh"]
 [ext_resource type="PackedScene" uid="uid://c2us8qxbbrurn" path="res://scenes/menus/hud.tscn" id="5_3248w"]
 [ext_resource type="PackedScene" uid="uid://dgw6vtudok5tv" path="res://scenes/menus/tutorial.tscn" id="7_eedix"]
 [ext_resource type="PackedScene" uid="uid://dv4ua640tlm6o" path="res://scenes/menus/game_over_menu.tscn" id="7_xl6ra"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgi6w"]
+shader = ExtResource("2_k8skh")
+shader_parameter/scanline_size = 2.0
+shader_parameter/distortion_amount = 0.0
+shader_parameter/time_speed = 0.5
+shader_parameter/brightness = 1.3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pmg1w"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dmqfg"]
 shader = ExtResource("2_i8qum")
@@ -18,40 +29,55 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_7xslx")
 
-[node name="background" type="TextureRect" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer"]
+material = SubResource("ShaderMaterial_vgi6w")
+layout_mode = 2
+texture = SubResource("ViewportTexture_pmg1w")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(960, 860)
+render_target_update_mode = 4
+
+[node name="background" type="TextureRect" parent="SubViewportContainer/SubViewport"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_dmqfg")
-layout_mode = 0
+offset_right = 320.0
+offset_bottom = 288.0
 scale = Vector2(3, 3)
 texture = ExtResource("1_ssecl")
 
-[node name="ship" parent="." instance=ExtResource("2_eng7i")]
+[node name="ship" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_eng7i")]
 position = Vector2(360, 432)
 scale = Vector2(2.5, 2.5)
 motion_mode = 1
 
-[node name="shoot_group" type="Node" parent="."]
+[node name="shoot_group" type="Node" parent="SubViewportContainer/SubViewport"]
 editor_description = "Nesse grupo serão adicionadas (a partir da função shoot() em ship.gd) as instâncias dos tiros (shoot)"
 
-[node name="asteroids_group" type="Node2D" parent="."]
+[node name="asteroids_group" type="Node2D" parent="SubViewportContainer/SubViewport"]
 
-[node name="asteroid_spawn_timer" type="Timer" parent="."]
+[node name="asteroid_spawn_timer" type="Timer" parent="SubViewportContainer/SubViewport"]
 wait_time = 0.2
 autostart = true
 
-[node name="increase_ast_speed_timer" type="Timer" parent="."]
+[node name="increase_ast_speed_timer" type="Timer" parent="SubViewportContainer/SubViewport"]
 autostart = true
 
-[node name="Canvas" type="Node2D" parent="."]
+[node name="Canvas" type="Node2D" parent="SubViewportContainer/SubViewport"]
 
-[node name="hud" parent="Canvas" instance=ExtResource("5_3248w")]
+[node name="hud" parent="SubViewportContainer/SubViewport/Canvas" instance=ExtResource("5_3248w")]
 
-[node name="tutorial" parent="Canvas" instance=ExtResource("7_eedix")]
+[node name="tutorial" parent="SubViewportContainer/SubViewport/Canvas" instance=ExtResource("7_eedix")]
 
-[node name="game_over_menu" parent="Canvas" instance=ExtResource("7_xl6ra")]
+[node name="game_over_menu" parent="SubViewportContainer/SubViewport/Canvas" instance=ExtResource("7_xl6ra")]
 visible = false
 
-[node name="explosion_group" type="Node2D" parent="."]
+[node name="explosion_group" type="Node2D" parent="SubViewportContainer/SubViewport"]
 
-[connection signal="timeout" from="asteroid_spawn_timer" to="." method="_on_asteroid_spawn_timer_timeout"]
-[connection signal="timeout" from="increase_ast_speed_timer" to="." method="_on_increase_ast_speed_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/asteroid_spawn_timer" to="." method="_on_asteroid_spawn_timer_timeout"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/increase_ast_speed_timer" to="." method="_on_increase_ast_speed_timer_timeout"]

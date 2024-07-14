@@ -29,10 +29,7 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
-"res://assets/": "yellow",
-"res://fonts/": "blue",
-"res://scenes/": "orange",
-"res://scripts/": "green"
+"res://fonts/": "blue"
 }
 
 [gui]

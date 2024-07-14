@@ -1,6 +1,10 @@
+SubViewport
+TextureRect
+SubViewportContainer
+Camera2D
+ColorRect
 MarginContainer
 Node2D
-ColorRect
 AnimationPlayer
 Label
 HBoxContainer
@@ -8,7 +12,3 @@ PanelContainer
 Panel
 CanvasLayer
 LineEdit
-Button
-CheckButton
-TextEdit
-CenterContainer
