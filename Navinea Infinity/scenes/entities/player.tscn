@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdmeuno5tx0gb"]
+[gd_scene load_steps=13 format=3 uid="uid://bdmeuno5tx0gb"]
 
-[ext_resource type="Texture2D" uid="uid://biys1ed0dsrwg" path="res://assets/ship.png" id="1_0l1vn"]
-[ext_resource type="Script" path="res://scripts/entities/ship.gd" id="1_hvawf"]
-
+[ext_resource type="Texture2D" uid="uid://biys1ed0dsrwg" path="res://assets/sprites/entities/ship.png" id="1_0l1vn"]
+[ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_hvawf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8h4a"]
 atlas = ExtResource("1_0l1vn")
@@ -20,11 +19,11 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_0l1vn")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6d5bd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_knxpp"]
 atlas = ExtResource("1_0l1vn")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wgnn5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dbgo"]
 atlas = ExtResource("1_0l1vn")
 region = Rect2(32, 32, 32, 32)
 
@@ -54,10 +53,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6d5bd")
+"texture": SubResource("AtlasTexture_knxpp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wgnn5")
+"texture": SubResource("AtlasTexture_3dbgo")
 }],
 "loop": true,
 "name": &"idle",
@@ -66,21 +65,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeya"]
 size = Vector2(27, 17)
-
-[sub_resource type="Animation" id="Animation_0p34d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_mgsfp"]
 resource_name = "damage_animation"
@@ -100,11 +84,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ou7y"]
 _data = {
-"RESET": SubResource("Animation_0p34d"),
 "damage_animation": SubResource("Animation_mgsfp")
 }
 
-[node name="ship" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(1.5, 1.5)
 collision_mask = 2
 script = ExtResource("1_hvawf")
@@ -112,7 +95,6 @@ script = ExtResource("1_hvawf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vhp3b")
 animation = &"idle"
-frame_progress = 0.525825
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -123,3 +105,10 @@ shape = SubResource("RectangleShape2D_yjeya")
 libraries = {
 "": SubResource("AnimationLibrary_8ou7y")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 860

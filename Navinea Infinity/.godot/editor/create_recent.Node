@@ -1,7 +1,9 @@
-SubViewport
 TextureRect
-SubViewportContainer
+AudioStreamPlayer
+Node
 Camera2D
+SubViewport
+SubViewportContainer
 ColorRect
 MarginContainer
 Node2D
@@ -10,5 +12,3 @@ Label
 HBoxContainer
 PanelContainer
 Panel
-CanvasLayer
-LineEdit

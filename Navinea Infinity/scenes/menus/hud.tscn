@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2us8qxbbrurn"]
 
-[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="1_27rfc"]
+[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://assets/fonts/Early GameBoy.ttf" id="1_27rfc"]
 [ext_resource type="Script" path="res://scripts/menus/hud.gd" id="1_e05ph"]
+
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_e05ph")

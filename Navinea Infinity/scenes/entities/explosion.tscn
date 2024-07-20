@@ -1,7 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbc65b3whv5wm"]
 
-[ext_resource type="Texture2D" uid="uid://cs0ypqjfh8304" path="res://assets/explosion.png" id="1_wtre7"]
+[ext_resource type="Texture2D" uid="uid://cs0ypqjfh8304" path="res://assets/sprites/entities/explosion.png" id="1_wtre7"]
 [ext_resource type="Script" path="res://scripts/entities/explosion.gd" id="2_4e8d1"]
+
 
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1b4n"]

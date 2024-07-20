@@ -13,28 +13,26 @@ config_version=5
 config/name="NavineaInfinity"
 run/main_scene="res://scenes/menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/asteroid-1.png"
+config/icon="res://assets/sprites/entities/asteroid-1.png"
 
 [autoload]
 
-Global="*res://autoload/global.tscn"
+Global="*res://scenes/autoloads/global.tscn"
+SoundManager="*res://scenes/autoloads/soundManager.tscn"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=864
-window/size/borderless=true
 window/stretch/mode="viewport"
 
-[file_customization]
+[filesystem]
 
-folder_colors={
-"res://fonts/": "blue"
-}
+import/blender/enabled=false
 
 [gui]
 
-theme/custom_font="res://fonts/Early GameBoy.ttf"
+theme/custom_font="res://assets/fonts/Early GameBoy.ttf"
 
 [input]
 

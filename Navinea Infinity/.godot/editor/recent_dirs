@@ -1,8 +1,9 @@
 res://shader
-res://autoload
-res://scripts
-res://fonts
-res://scenes
+res://scenes/menus
+res://scenes/entities
+res://scenes/autoloads
+C:/Users/kawas/OneDrive/Documentos/Estudos Externos/Godot/Navinea Infinity/Navinea Infinity/scripts/menus
 res://assets
-C:/Users/labir/Documents/kawa/navinea/Navinea Infinity/scripts
+res://scripts
+res://scenes
 res://themes

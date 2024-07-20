@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cmwgba5ocfaeu"]
 
-[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="1_s8rf3"]
+[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://assets/fonts/Early GameBoy.ttf" id="1_s8rf3"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u3ts"]
 

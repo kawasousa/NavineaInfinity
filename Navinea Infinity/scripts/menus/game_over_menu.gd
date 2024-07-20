@@ -16,8 +16,10 @@ func _ready():
 	high_score_user.placeholder_text = Global.high_score_player
 	set_new_high_score_player.disabled = false
 	set_new_high_score_player.visible = true
+	
+	SoundManager.addMusicToQueue("menu2")
 
-func _process(delta):
+func _process(_delta):
 	show_game_over_screen()
 	set_new_high_score()
 
@@ -34,7 +36,7 @@ func show_game_over_screen() -> void:
 		visible = true
 		update_high_score_label()
 		grab_button_focus()
-		Global.player_node.die()
+		Global.player.die()
 		floating_animation.play("floating")
 
 ## Se o botão de sair for pressionado, a cena muda para o menu inicial

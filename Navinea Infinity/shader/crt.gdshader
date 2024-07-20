@@ -11,6 +11,7 @@ void fragment() {
     
     // Calculate time-based distortion
     float time = TIME * time_speed;
+	//float time = time_speed;
     
     // Simulate scanlines
     float scanline = sin((uv.y + time) * resolution.y * scanline_size) * 0.5 + 0.5;

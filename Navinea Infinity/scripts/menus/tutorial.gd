@@ -12,7 +12,7 @@ var pressed_keys: int = 0
 func _ready():
 	animation_player.play("slide")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_up"):
 		w.visible = false
 		pressed_keys += 1
@@ -31,4 +31,4 @@ func _process(delta):
 	
 	if pressed_keys == 5:
 		visible = false
-		Global.level_node.can_spawn_enemies = true
+		Global.level.can_spawn_enemies = true

@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgw6vtudok5tv"]
 
-[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://fonts/Early GameBoy.ttf" id="1_jrg75"]
+[ext_resource type="FontFile" uid="uid://bo7ehhwxixleb" path="res://assets/fonts/Early GameBoy.ttf" id="1_jrg75"]
 [ext_resource type="Script" path="res://scripts/menus/tutorial.gd" id="1_oogfm"]
+
 
 [sub_resource type="Animation" id="Animation_smr8m"]
 length = 0.001

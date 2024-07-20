@@ -10,7 +10,7 @@ func _process(_delta):
 	update_score_label()
 
 func update_hp_label() -> void:
-	hit_points_label.text = "vida: " + "<".repeat(Global.player_hp)
+	hit_points_label.text = "vida: " + "<".repeat(Global.player.hitPoints)
 
 func update_score_label() -> void:
 	var increase_speed = max((Global.player_score - score_draw) / 20, 5)
